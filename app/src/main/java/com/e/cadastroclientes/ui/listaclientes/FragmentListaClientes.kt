@@ -1,11 +1,11 @@
 package com.e.cadastroclientes.ui.listaclientes
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_lista_clientes.view.*
 
 class FragmentListaClientes : Fragment(), ListaClientesAdapter.clienteOnClickListener {
 
-   private var listaClientes: List<Cliente> = listOf()
+    private var listaClientes: List<Cliente> = listOf()
 
     private lateinit var db: AppDataBase
     private lateinit var repo: Repository
@@ -46,23 +46,45 @@ class FragmentListaClientes : Fragment(), ListaClientesAdapter.clienteOnClickLis
         repo = RepositoryImpl(db.clienteDao())
 
 
+//        viewModel.addCliente(
+//            Cliente(
+//                nome = "Tilia",
+//                telefone = "1234",
+//                endereco = "Rua Apinajés",
+//                email = "tilia@",
+//                cep = "3354",
+//                estado = "SP",
+//                bairro = "Perdizes",
+//                cidade = "São Paulo"
+//            )
+//        )
+//
+//        viewModel.addCliente(
+//            Cliente(
+//                nome = "Dude",
+//                telefone = "1234",
+//                endereco = "Rua Apinajés",
+//                email = "tilia@",
+//                cep = "5643354",
+//                estado = "SP",
+//                bairro = "Perdizes",
+//                cidade = "São Paulo"
+//            )
+//        )
 
-        viewModel.addCliente(Cliente(nome = "Tilia", telefone = 1234, endereco = "Rua Apinajés", email = "tilia@", cep = 5643354, estado = "SP", bairro = "Perdizes", cidade = "São Paulo"))
 
         viewModel.getAllClientes()
 
-        viewModel.listaDeClientes.observe(viewLifecycleOwner, {
-            Log.i("LISTA", it.toString())
-
-        })
-
         //configurando o adapter
-        view.rv_frag_lista_clientes.adapter = ListaClientesAdapter(listaClientes, this)
         view.rv_frag_lista_clientes.layoutManager = LinearLayoutManager(context)
         view.rv_frag_lista_clientes.setHasFixedSize(true)
+        viewModel.listaDeClientes.observe(viewLifecycleOwner, {
+            view.rv_frag_lista_clientes.adapter = ListaClientesAdapter(it, this)
+        })
 
 
-        view.btn_cadastrar_frag_lista_clientes.setOnClickListener{
+
+        view.btn_cadastrar_frag_lista_clientes.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentListaClientes_to_fragmentCadastroClientes)
         }
 
@@ -73,11 +95,8 @@ class FragmentListaClientes : Fragment(), ListaClientesAdapter.clienteOnClickLis
         val clienteSelecionado = listaClientes[position]
         Log.i("LISTACLIENTES", clienteSelecionado.toString())
 
-        val direction =
-            FragmentListaClientesDirections.actionFragmentListaClientesToFragmentDetalhesCliente(
-                clienteSelecionado
-            )
-        findNavController().navigate(direction)
+        val bundle = bundleOf("key" to clienteSelecionado)
+        findNavController().navigate(R.id.action_fragmentCadastroClientes_to_fragmentListaClientes, bundle)
     }
 
 

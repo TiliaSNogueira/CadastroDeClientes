@@ -16,7 +16,7 @@ data class Cliente(
     var nome: String,
 
     @ColumnInfo(name = "telefoneCliente")
-    var telefone: Int,
+    var telefone: String,
 
     @ColumnInfo(name = "emailCliente")
     var email: String,
@@ -34,6 +34,6 @@ data class Cliente(
     var estado: String,
 
     @ColumnInfo(name = "cepCliente")
-    var cep: Long,
+    var cep: String,
 
     ) : Serializable
