@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.io.Serializable
 
-@Entity
+@Entity (tableName = "tabelaClientes")
 data class Cliente(
 
     //id vai ser a primary key e vai incrementar automaticamente

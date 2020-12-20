@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentSplashScreen"
-        android:name="com.e.cadastroclientes.ui.FragmentSplashScreen"
+        android:name="com.e.cadastroclientes.ui.splashscreen.FragmentSplashScreen"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen">
         <action
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/fragmentListaClientes"
-        android:name="com.e.cadastroclientes.ui.FragmentListaClientes"
+        android:name="com.e.cadastroclientes.ui.listaclientes.FragmentListaClientes"
         android:label="fragment_lista_clientes"
         tools:layout="@layout/fragment_lista_clientes">
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentDetalhesCliente"
-        android:name="com.e.cadastroclientes.ui.FragmentDetalhesCliente"
+        android:name="com.e.cadastroclientes.ui.detallhescliente.FragmentDetalhesCliente"
         android:label="fragment_detalhes_cliente"
         tools:layout="@layout/fragment_detalhes_cliente">
         <argument
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentCadastroClientes"
-        android:name="com.e.cadastroclientes.ui.FragmentCadastroClientes"
+        android:name="com.e.cadastroclientes.ui.cadastroclientes.FragmentCadastroClientes"
         android:label="fragment_cadastro_clientes"
         tools:layout="@layout/fragment_cadastro_clientes">
         <action

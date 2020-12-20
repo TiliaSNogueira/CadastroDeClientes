@@ -1,4 +1,4 @@
-package com.e.cadastroclientes.ui
+package com.e.cadastroclientes.ui.cadastroclientes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

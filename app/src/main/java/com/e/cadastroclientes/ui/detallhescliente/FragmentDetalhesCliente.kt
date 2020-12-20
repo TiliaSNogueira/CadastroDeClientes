@@ -1,4 +1,4 @@
-package com.e.cadastroclientes.ui
+package com.e.cadastroclientes.ui.detallhescliente
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.e.cadastroclientes.R
-import kotlinx.android.synthetic.main.fragment_detalhes_cliente.*
 import kotlinx.android.synthetic.main.fragment_detalhes_cliente.view.*
 
 class FragmentDetalhesCliente : Fragment() {

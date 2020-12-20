@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul_claro"
-    tools:context=".ui.FragmentListaClientes">
+    tools:context=".ui.listaclientes.FragmentListaClientes">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_frag_lista_clientes"

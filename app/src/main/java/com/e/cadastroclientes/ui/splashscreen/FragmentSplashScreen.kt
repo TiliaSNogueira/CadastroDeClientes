@@ -1,4 +1,4 @@
-package com.e.cadastroclientes.ui
+package com.e.cadastroclientes.ui.splashscreen
 
 import android.os.Bundle
 import android.view.LayoutInflater

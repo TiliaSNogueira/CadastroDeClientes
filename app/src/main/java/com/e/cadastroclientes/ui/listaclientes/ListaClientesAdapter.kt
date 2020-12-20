@@ -1,4 +1,4 @@
-package com.e.cadastroclientes.ui
+package com.e.cadastroclientes.ui.listaclientes
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,7 @@ import com.e.cadastroclientes.models.Cliente
 import kotlinx.android.synthetic.main.item_cliente.view.*
 
 class ListaClientesAdapter(
-    val listaClientes: MutableList<Cliente>,
+    val listaClientes: List<Cliente>,
     val listener: clienteOnClickListener
 ) :
     RecyclerView.Adapter<ListaClientesAdapter.ClienteViewHolder>() {

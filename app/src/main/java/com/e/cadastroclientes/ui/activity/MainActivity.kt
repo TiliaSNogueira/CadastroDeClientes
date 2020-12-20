@@ -1,9 +1,10 @@
-package com.e.cadastroclientes
+package com.e.cadastroclientes.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import com.e.cadastroclientes.R
 
 class MainActivity : AppCompatActivity() {
 
