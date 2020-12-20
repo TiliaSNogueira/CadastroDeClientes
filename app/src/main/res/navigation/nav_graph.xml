@@ -9,44 +9,54 @@
         android:id="@+id/fragmentSplashScreen"
         android:name="com.e.cadastroclientes.ui.FragmentSplashScreen"
         android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
+        tools:layout="@layout/fragment_splash_screen">
         <action
             android:id="@+id/action_fragmentSplashScreen_to_fragmentListaClientes"
-            app:destination="@id/fragmentListaClientes" />
+            app:destination="@id/fragmentListaClientes"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
     </fragment>
 
     <fragment
         android:id="@+id/fragmentListaClientes"
         android:name="com.e.cadastroclientes.ui.FragmentListaClientes"
         android:label="fragment_lista_clientes"
-        tools:layout="@layout/fragment_lista_clientes" >
+        tools:layout="@layout/fragment_lista_clientes">
         <action
             android:id="@+id/action_fragmentListaClientes_to_fragmentDetalhesCliente"
-            app:destination="@id/fragmentDetalhesCliente" />
+            app:destination="@id/fragmentDetalhesCliente"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
         <action
             android:id="@+id/action_fragmentListaClientes_to_fragmentCadastroClientes"
-            app:destination="@id/fragmentCadastroClientes" />
+            app:destination="@id/fragmentCadastroClientes"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDetalhesCliente"
         android:name="com.e.cadastroclientes.ui.FragmentDetalhesCliente"
         android:label="fragment_detalhes_cliente"
-        tools:layout="@layout/fragment_detalhes_cliente" >
+        tools:layout="@layout/fragment_detalhes_cliente">
         <argument
             android:name="objCliente"
             app:argType="com.e.cadastroclientes.models.Cliente" />
         <action
             android:id="@+id/action_fragmentDetalhesCliente_to_fragmentListaClientes"
-            app:destination="@id/fragmentListaClientes" />
+            app:destination="@id/fragmentListaClientes"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/fragmentCadastroClientes"
         android:name="com.e.cadastroclientes.ui.FragmentCadastroClientes"
         android:label="fragment_cadastro_clientes"
-        tools:layout="@layout/fragment_cadastro_clientes" >
+        tools:layout="@layout/fragment_cadastro_clientes">
         <action
             android:id="@+id/action_fragmentCadastroClientes_to_fragmentListaClientes"
-            app:destination="@id/fragmentListaClientes" />
+            app:destination="@id/fragmentListaClientes"
+            app:enterAnim="@anim/from_top"
+            app:exitAnim="@anim/to_bottom" />
     </fragment>
 
 </navigation>
