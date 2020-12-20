@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="8dp"
+    android:backgroundTint="#F0EEE9"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_item_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Nome do cliente"
+            android:drawableLeft="@drawable/ic_nome"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/tv_item_telefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Telefone do cliente"
+            android:drawableLeft="@drawable/ic_telefone"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_item_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Email do cliente"
+            android:drawableLeft="@drawable/ic_email"
+            android:textSize="20dp"/>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

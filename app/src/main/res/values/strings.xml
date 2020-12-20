@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">CadastroClientes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="nome">Nome</string>
+    <string name="telefone">Telefone</string>
+    <string name="email">Email</string>
+    <string name="endereco">Endereço</string>
+    <string name="bairro">Bairro</string>
+    <string name="cidade">Cidade</string>
+    <string name="estado">Estado</string>
+    <string name="cep">CEP</string>
+    <string name="salvar">SALVAR</string>
+    <string name="informacoes_cliente">Informações do Cliente</string>
+    <string name="cadastro_de_clientes">Cadastro de Clientes</string>
+    <string name="imagem_agenda">Imagem agenda</string>
+    <string name="clientes_cadastrados">Clientes cadastrados</string>
+    <string name="cadastrar_novo_cliente">CADASTRAR NOVO CLIENTE</string>
+</resources>
