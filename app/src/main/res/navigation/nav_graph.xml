@@ -38,14 +38,14 @@
         android:name="com.e.cadastroclientes.ui.detallhescliente.FragmentDetalhesCliente"
         android:label="fragment_detalhes_cliente"
         tools:layout="@layout/fragment_detalhes_cliente">
-<!--        <argument-->
-<!--            android:name="objCliente"-->
-<!--            app:argType="com.e.cadastroclientes.models.Cliente" />-->
         <action
             android:id="@+id/action_fragmentDetalhesCliente_to_fragmentListaClientes"
             app:destination="@id/fragmentListaClientes"
             app:enterAnim="@anim/from_left"
             app:exitAnim="@anim/to_right" />
+        <argument
+            android:name="clienteObj"
+            app:argType="com.e.cadastroclientes.models.Cliente" />
     </fragment>
     <fragment
         android:id="@+id/fragmentCadastroClientes"

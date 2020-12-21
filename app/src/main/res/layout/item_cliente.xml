@@ -31,7 +31,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:text="Nome do cliente"
-                android:textSize="25dp" />
+                android:textSize="25sp" />
 
         </LinearLayout>
 
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Telefone do cliente"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Email do cliente"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
 
         </LinearLayout>

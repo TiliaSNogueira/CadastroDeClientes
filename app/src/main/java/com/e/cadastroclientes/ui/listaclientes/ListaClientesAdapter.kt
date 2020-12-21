@@ -4,16 +4,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.e.cadastroclientes.R
 import com.e.cadastroclientes.models.Cliente
 import kotlinx.android.synthetic.main.item_cliente.view.*
 
-class ListaClientesAdapter(
-    val listaClientes: List<Cliente>,
-    val listener: clienteOnClickListener
-) :
-    RecyclerView.Adapter<ListaClientesAdapter.ClienteViewHolder>() {
+class ListaClientesAdapter() : RecyclerView.Adapter<ListaClientesAdapter.ClienteViewHolder>() {
+
+    var listaClientes = emptyList<Cliente>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClienteViewHolder {
         val item = LayoutInflater.from(parent.context).inflate(R.layout.item_cliente, parent, false)
@@ -28,18 +27,20 @@ class ListaClientesAdapter(
         holder.emailCliente.text = cliente.email
 
         holder.itemView.setOnClickListener {
-            listener.selecionaClienteClick(position)
+            val action = FragmentListaClientesDirections.actionFragmentListaClientesToFragmentDetalhesCliente(cliente)
+            holder.itemView.findNavController().navigate(action)
         }
+
 
     }
 
     override fun getItemCount() = listaClientes.size
 
-
-    interface clienteOnClickListener {
-        fun selecionaClienteClick(position: Int)
-
+    fun setData(cliente : List<Cliente>){
+        this.listaClientes = cliente
+        notifyDataSetChanged()
     }
+
 
     class ClienteViewHolder(item: View) : RecyclerView.ViewHolder(item) {
 

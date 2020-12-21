@@ -1,10 +1,13 @@
 package com.e.cadastroclientes.models
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
+@Parcelize
 @Entity (tableName = "tabelaClientes")
 data class Cliente(
 
@@ -36,4 +39,4 @@ data class Cliente(
     @ColumnInfo(name = "cepCliente")
     var cep: String,
 
-    ) : Serializable
+    ) : Parcelable
