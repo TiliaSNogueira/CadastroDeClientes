@@ -46,6 +46,9 @@
         <argument
             android:name="clienteObj"
             app:argType="com.e.cadastroclientes.models.Cliente" />
+        <action
+            android:id="@+id/action_fragmentDetalhesCliente_to_fragmentEditarCliente"
+            app:destination="@id/fragmentEditarCliente" />
     </fragment>
     <fragment
         android:id="@+id/fragmentCadastroClientes"
@@ -57,6 +60,15 @@
             app:destination="@id/fragmentListaClientes"
             app:enterAnim="@anim/from_top"
             app:exitAnim="@anim/to_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentEditarCliente"
+        android:name="com.e.cadastroclientes.ui.editarcliente.FragmentEditarCliente"
+        android:label="fragment_editar_cliente"
+        tools:layout="@layout/fragment_editar_cliente" >
+        <argument
+            android:name="clienteObj"
+            app:argType="com.e.cadastroclientes.models.Cliente" />
     </fragment>
 
 </navigation>

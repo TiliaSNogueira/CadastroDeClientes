@@ -17,4 +17,5 @@
     <string name="imagem_agenda">Imagem agenda</string>
     <string name="clientes_cadastrados">Clientes cadastrados</string>
     <string name="cadastrar_novo_cliente">CADASTRAR NOVO CLIENTE</string>
+    <string name="editar">Editar</string>
 </resources>
