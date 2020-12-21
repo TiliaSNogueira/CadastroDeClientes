@@ -16,8 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/azul"
         app:titleTextColor="@color/white"
-        app:title="@string/clientes_cadastrados"
-        app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"/>
+        app:title="@string/clientes_cadastrados"/>
 
 
     <androidx.recyclerview.widget.RecyclerView

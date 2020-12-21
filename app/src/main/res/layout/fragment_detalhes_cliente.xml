@@ -18,7 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_baseline_arrow_back"
         app:title="@string/informacoes_cliente"
-        app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
         app:titleTextColor="@color/white" />
 
     <androidx.cardview.widget.CardView

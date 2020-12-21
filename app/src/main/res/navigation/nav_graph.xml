@@ -48,7 +48,9 @@
             app:argType="com.e.cadastroclientes.models.Cliente" />
         <action
             android:id="@+id/action_fragmentDetalhesCliente_to_fragmentEditarCliente"
-            app:destination="@id/fragmentEditarCliente" />
+            app:destination="@id/fragmentEditarCliente"
+            app:enterAnim="@anim/from_bottom"
+            app:exitAnim="@anim/to_top" />
     </fragment>
     <fragment
         android:id="@+id/fragmentCadastroClientes"
@@ -71,7 +73,9 @@
             app:argType="com.e.cadastroclientes.models.Cliente" />
         <action
             android:id="@+id/action_fragmentEditarCliente_to_fragmentListaClientes"
-            app:destination="@id/fragmentListaClientes" />
+            app:destination="@id/fragmentListaClientes"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
     </fragment>
 
 </navigation>

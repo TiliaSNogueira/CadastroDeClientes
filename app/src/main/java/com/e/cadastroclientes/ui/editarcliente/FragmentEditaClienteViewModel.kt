@@ -10,8 +10,6 @@ import kotlinx.coroutines.launch
 
 class FragmentEditaClienteViewModel (val repository: Repository) : ViewModel() {
 
-  //  val listaDeClientes = MutableLiveData<List<Cliente>>()
-
     fun atualizaCliente(cliente: Cliente) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.atualizaClienteTask(cliente)

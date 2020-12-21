@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import com.e.cadastroclientes.R
@@ -19,6 +20,7 @@ import com.e.cadastroclientes.models.Cliente
 import com.e.cadastroclientes.repository.Repository
 import com.e.cadastroclientes.repository.RepositoryImpl
 import kotlinx.android.synthetic.main.fragment_lista_clientes.view.*
+import javax.security.auth.callback.Callback
 
 class FragmentListaClientes : Fragment() {
 
@@ -52,6 +54,8 @@ class FragmentListaClientes : Fragment() {
         view.rv_frag_lista_clientes.adapter = adapter
         view.rv_frag_lista_clientes.layoutManager = LinearLayoutManager(context)
         view.rv_frag_lista_clientes.setHasFixedSize(true)
+
+
 
 
 
