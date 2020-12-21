@@ -16,6 +16,7 @@ import com.e.cadastroclientes.database.AppDataBase
 import com.e.cadastroclientes.models.Cliente
 import com.e.cadastroclientes.repository.Repository
 import com.e.cadastroclientes.repository.RepositoryImpl
+import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.fragment_cadastro_clientes.*
 import kotlinx.android.synthetic.main.fragment_cadastro_clientes.view.*
 
@@ -46,36 +47,36 @@ class FragmentCadastroClientes : Fragment() {
 
         //pegando dados do edittext
         val id = 0
-        val nome = view.ed_cadastro_nome.text.toString()
-        val telefone = view.ed_cadastro_telefone.text.toString()
-        val email = view.ed_cadastro_email.text.toString()
-        val endereco = view.ed_cadastro_endereco.text.toString()
-        val bairro = view.ed_cadastro_bairro.text.toString()
-        val cidade = view.ed_cadastro_cidade.text.toString()
-        val estado = view.ed_cadastro_estado.text.toString()
-        val cep = view.ed_cadastro_cep.text.toString()
-
-
-        //vinculando os dados ao cliente
-        val clienteCadastrado = Cliente(
-            id,
-            nome,
-            telefone,
-            email,
-            endereco,
-            bairro,
-            cidade,
-            estado,
-            cep
-        )
+        val campoNome : TextInputEditText = view.ed_cadastro_nome
+        val campoTelefone = view.ed_cadastro_telefone
+        val campoEmail = view.ed_cadastro_email
+        val campoEndereco = view.ed_cadastro_endereco
+        val campoBairro = view.ed_cadastro_bairro
+        val campoCidade = view.ed_cadastro_cidade
+        val campoEstado = view.ed_cadastro_estado
+        val campoCep = view.ed_cadastro_cep
 
 
         view.btn_cadastro_salvar.setOnClickListener {
+
             //salvando o cliente
-            viewModel.addCliente(clienteCadastrado)
-            Log.i("CADASTRO", clienteCadastrado.toString())
+            viewModel.addCliente(Cliente(
+                nome = campoNome.text.toString(),
+                telefone = campoTelefone.text.toString(),
+                email = campoEmail.text.toString(),
+                endereco = campoEndereco.text.toString(),
+                bairro = campoBairro.text.toString(),
+                cidade = campoCidade.text.toString(),
+                estado = campoEstado.text.toString(),
+                cep =  campoCep.text.toString()
+            ))
+
+
+
+
             Toast.makeText(context, "Cadastro efetuado", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_fragmentCadastroClientes_to_fragmentListaClientes)
+            //fechar teclado
         }
 
         view.toolbar_cadastro.setNavigationOnClickListener {
