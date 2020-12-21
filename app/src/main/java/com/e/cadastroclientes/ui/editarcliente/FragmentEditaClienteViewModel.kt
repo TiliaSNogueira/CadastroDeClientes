@@ -1,4 +1,4 @@
-package com.e.cadastroclientes.ui.cadastroclientes
+package com.e.cadastroclientes.ui.editarcliente
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,15 +8,15 @@ import com.e.cadastroclientes.repository.Repository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class FragmentCadastroClientesViewModel(val repository: Repository) : ViewModel() {
+class FragmentEditaClienteViewModel (val repository: Repository) : ViewModel() {
 
+  //  val listaDeClientes = MutableLiveData<List<Cliente>>()
 
-//    val listaDeClientes = MutableLiveData<List<Cliente>>()
-
-    fun addCliente(cliente: Cliente) {
+    fun atualizaCliente(cliente: Cliente) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.addClienteTask(cliente)
+            repository.atualizaClienteTask(cliente)
         }
     }
+
 
 }

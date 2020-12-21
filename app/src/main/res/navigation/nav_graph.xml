@@ -69,6 +69,9 @@
         <argument
             android:name="clienteObj"
             app:argType="com.e.cadastroclientes.models.Cliente" />
+        <action
+            android:id="@+id/action_fragmentEditarCliente_to_fragmentListaClientes"
+            app:destination="@id/fragmentListaClientes" />
     </fragment>
 
 </navigation>

@@ -12,6 +12,8 @@ interface Repository {
 
     suspend fun addClienteTask(cliente: Cliente)
 
+    suspend fun atualizaClienteTask(cliente: Cliente)
+
 }
 
 class RepositoryImpl(val clienteDao: ClienteDao) : Repository {
@@ -19,6 +21,10 @@ class RepositoryImpl(val clienteDao: ClienteDao) : Repository {
 
     override suspend fun addClienteTask(cliente: Cliente) {
         clienteDao.addCliente(cliente)
+    }
+
+    override suspend fun atualizaClienteTask(cliente: Cliente) {
+        clienteDao.atualizaCliente(cliente)
     }
 
 
