@@ -10,7 +10,7 @@ import com.e.cadastroclientes.models.Cliente
 @Database(entities = [Cliente::class], version = 1, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
 
-    abstract fun clienteDao() : ClienteDao
+    abstract fun clienteDao(): ClienteDao
 
     companion object {
         @Volatile
@@ -18,7 +18,7 @@ abstract class AppDataBase : RoomDatabase() {
         private val LOCK = Any()
 
         //passa o contexto e pega a instancia do banco - uma instancia unica para o app inteiro
-        operator fun invoke(context: Context) = instance ?: kotlin.synchronized(LOCK) {
+        operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
             instance ?: buildDatabase(context).also { instance = it }
         }
 

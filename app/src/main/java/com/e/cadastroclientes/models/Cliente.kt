@@ -5,13 +5,12 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
-import java.io.Serializable
 
 @Parcelize
-@Entity (tableName = "tabelaClientes")
+@Entity(tableName = "tabelaClientes")
 data class Cliente(
 
-    //id vai ser a primary key e vai incrementar automaticamente
+    //indica que o id vai ser a primary key e vai incrementar automaticamente
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
 

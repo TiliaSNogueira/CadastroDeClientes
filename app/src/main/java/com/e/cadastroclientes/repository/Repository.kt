@@ -1,7 +1,5 @@
 package com.e.cadastroclientes.repository
 
-import androidx.room.Insert
-import androidx.room.Query
 import com.e.cadastroclientes.dao.ClienteDao
 import com.e.cadastroclientes.models.Cliente
 
@@ -26,7 +24,7 @@ class RepositoryImpl(val clienteDao: ClienteDao) : Repository {
     }
 
     override suspend fun atualizaClienteTask(cliente: Cliente) {
-        clienteDao.atualizaCliente(cliente)
+        clienteDao.updateCliente(cliente)
     }
 
     override suspend fun deleteClienteTask(cliente: Cliente) {

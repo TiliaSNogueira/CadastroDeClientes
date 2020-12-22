@@ -29,9 +29,9 @@
                 android:id="@+id/tv_item_nome"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="Nome do cliente"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -50,7 +50,7 @@
                 android:id="@+id/tv_item_telefone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="Telefone do cliente"
                 android:textSize="20sp" />
 
@@ -72,7 +72,7 @@
                 android:id="@+id/tv_item_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="Email do cliente"
                 android:textSize="20sp" />
 
