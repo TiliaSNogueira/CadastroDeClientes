@@ -1,30 +1,24 @@
 package com.e.cadastroclientes.ui.listaclientes
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.ListAdapter
 import com.e.cadastroclientes.R
 import com.e.cadastroclientes.database.AppDataBase
-import com.e.cadastroclientes.models.Cliente
 import com.e.cadastroclientes.repository.Repository
 import com.e.cadastroclientes.repository.RepositoryImpl
 import kotlinx.android.synthetic.main.fragment_lista_clientes.view.*
-import javax.security.auth.callback.Callback
 
 class FragmentListaClientes : Fragment() {
 
-   // private var listaClientes: List<Cliente> = listOf()
+    // private var listaClientes: List<Cliente> = listOf()
 
     private lateinit var db: AppDataBase
     private lateinit var repo: Repository
@@ -59,9 +53,12 @@ class FragmentListaClientes : Fragment() {
 
 
 
+
+
+
         viewModel.getAllClientes()
         viewModel.listaDeClientes.observe(viewLifecycleOwner, {
-           adapter.setData(it)
+            adapter.setData(it)
         })
 
 

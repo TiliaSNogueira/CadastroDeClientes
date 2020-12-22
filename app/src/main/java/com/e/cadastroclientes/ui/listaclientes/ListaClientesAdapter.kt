@@ -41,7 +41,6 @@ class ListaClientesAdapter() : RecyclerView.Adapter<ListaClientesAdapter.Cliente
         notifyDataSetChanged()
     }
 
-
     class ClienteViewHolder(item: View) : RecyclerView.ViewHolder(item) {
 
         val nomeCliente: TextView = item.tv_item_nome
