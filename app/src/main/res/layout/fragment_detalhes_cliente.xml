@@ -22,12 +22,10 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
         android:backgroundTint="@color/cinza"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,45 +33,121 @@
             android:orientation="vertical"
             android:layout_margin="15dp">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_cliente"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Nome:"
+                android:textColor="@color/azul"
+                android:textSize="15sp" />
+
             <TextView
                 android:id="@+id/tv_detalhes_nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="Nome do cliente"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Telefone:"
+                android:textColor="@color/azul"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv_detalhes_telefone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="Telefone do cliente"
                 android:textSize="20sp" />
 
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Email:"
+                android:textColor="@color/azul"
+                android:textSize="15sp" />
             <TextView
                 android:id="@+id/tv_detalhes_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="Email do cliente"
                 android:textSize="20sp" />
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Endereço:"
+                android:textColor="@color/azul"
+                android:textSize="15sp" />
             <TextView
                 android:id="@+id/tv_detalhes_endereco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="Endereço"
                 android:textSize="20sp" />
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Bairro:"
+                android:textColor="@color/azul"
+                android:textSize="15sp" />
             <TextView
                 android:id="@+id/tv_detalhes_bairro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="Bairro"
                 android:textSize="20sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="Cidade:"
+                    android:layout_weight="1"
+                    android:textColor="@color/azul"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="Estado:"
+                    android:layout_weight="2"
+                    android:textColor="@color/azul"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,7 +158,7 @@
                     android:id="@+id/tv_detalhes_cidade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="6dp"
                     android:layout_weight="1"
                     android:text="Cidade"
                     android:textSize="20sp" />
@@ -93,18 +167,26 @@
                     android:id="@+id/tv_detalhes_estado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="6dp"
                     android:layout_weight="2"
                     android:text="Estado"
                     android:textSize="20sp" />
 
             </LinearLayout>
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="CEP:"
+                android:textColor="@color/azul"
+                android:textSize="15sp" />
             <TextView
                 android:id="@+id/tv_detalhes_cep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:text="CEP"
                 android:textSize="20sp" />
 
