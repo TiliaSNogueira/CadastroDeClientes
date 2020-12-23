@@ -23,6 +23,7 @@ class FragmentListaClientes : Fragment() {
     private lateinit var db: AppDataBase
     private lateinit var repo: Repository
 
+    //está instanciado assim pq a ViewModel tem o Repository como parâmetro
     val viewModel by viewModels<FragmentListaClientesViewModel> {
         object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
@@ -39,6 +40,7 @@ class FragmentListaClientes : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_lista_clientes, container, false)
 
+        //iniciando db e repo
         db = activity?.applicationContext?.let { AppDataBase.invoke(it) }!!
         repo = RepositoryImpl(db.clienteDao())
 
@@ -49,22 +51,13 @@ class FragmentListaClientes : Fragment() {
         view.rv_frag_lista_clientes.layoutManager = LinearLayoutManager(context)
         view.rv_frag_lista_clientes.setHasFixedSize(true)
 
-
-
-
-
-
-
-
+        //viewModel chama a lista e passa pata o adapter
         viewModel.getAllClientes()
         viewModel.listaDeClientes.observe(viewLifecycleOwner, {
             adapter.setData(it)
         })
 
-
-
-
-
+        //click no botao de cadatrar novo usuario
         view.btn_cadastrar_frag_lista_clientes.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentListaClientes_to_fragmentCadastroClientes)
         }

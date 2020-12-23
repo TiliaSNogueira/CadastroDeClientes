@@ -9,20 +9,14 @@ import kotlinx.coroutines.launch
 
 class FragmentListaClientesViewModel(val repository: Repository) : ViewModel() {
 
-
+    //lista que será passada para o adapter
     val listaDeClientes = MutableLiveData<List<Cliente>>()
 
-    fun getAllClientes(){
+    //função que passa o value para a lista que vai ser passada parao adapter
+    fun getAllClientes() {
         viewModelScope.launch {
             listaDeClientes.value = repository.getAllClientesTask()
         }
     }
-
-    fun addCliente(cliente: Cliente){
-        viewModelScope.launch {
-            repository.addClienteTask(cliente)
-        }
-    }
-
 
 }

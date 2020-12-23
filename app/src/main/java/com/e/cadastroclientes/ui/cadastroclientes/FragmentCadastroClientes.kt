@@ -61,7 +61,7 @@ class FragmentCadastroClientes : Fragment() {
                 it.hideKeyboard()
 
             } else {
-                Toast.makeText(context, "Preencher dados corretamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Preencher nome, telefone e email corretamente", Toast.LENGTH_SHORT).show()
             }
 
         }
