@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.e.cadastroclientes.models.Cliente
 import com.e.cadastroclientes.repository.Repository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class FragmentListaClientesViewModel(val repository: Repository) : ViewModel() {
@@ -14,13 +15,12 @@ class FragmentListaClientesViewModel(val repository: Repository) : ViewModel() {
 
     //função que passa o value para a lista que vai ser passada parao adapter
     fun getAllClientes() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.Main){
             listaDeClientes.value = repository.getAllClientesTask()
         }
     }
 
     fun prePreencheClientesExibicao() {
-
         val listaPrePreenche = listOf(
             Cliente(
                 nome = "Tília S. Nogueira",
@@ -54,13 +54,11 @@ class FragmentListaClientesViewModel(val repository: Repository) : ViewModel() {
             ),
         )
 
-        listaPrePreenche.forEach {
-            viewModelScope.launch {
-                repository.addClienteTask(it)
-            }
+        viewModelScope.launch(Dispatchers.Main) {
+            repository.prePreenche(listaPrePreenche)
         }
-
-
     }
 
+
 }
+

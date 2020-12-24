@@ -14,6 +14,9 @@ interface Repository {
 
     suspend fun deleteClienteTask(cliente: Cliente)
 
+
+    suspend fun prePreenche(listaPrePreenche: List<Cliente>)
+
 }
 
 class RepositoryImpl(val clienteDao: ClienteDao) : Repository {
@@ -29,6 +32,10 @@ class RepositoryImpl(val clienteDao: ClienteDao) : Repository {
 
     override suspend fun deleteClienteTask(cliente: Cliente) {
         clienteDao.deleteCliente(cliente)
+    }
+
+    override suspend fun prePreenche(listaPrePreenche: List<Cliente>) {
+        clienteDao.prePreenche((listaPrePreenche))
     }
 
 

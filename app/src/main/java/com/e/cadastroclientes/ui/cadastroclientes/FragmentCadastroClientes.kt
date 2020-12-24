@@ -51,11 +51,12 @@ class FragmentCadastroClientes : Fragment() {
             //função que pega os dados e vincula ao cliente
             val clientePreenchido = pegaDadosParaCadastro()
 
-            //envia o cliente para a viewModel fazer a ação de adicionar ao banco de dados (obs: chegando lá vamos conferir se os campos estão preenchidos ou não para então adiconar)
-            viewModel.addCliente(clientePreenchido)
+            //confere se os dados principais foram preechidos, ou seja, se true significa efetua o cadastro, se false pede para preencher os dados corretamente
+            if (viewModel.confereDados(clientePreenchido.nome, clientePreenchido.telefone, clientePreenchido.email)) {
 
-            //confere o retorno da função, ou seja, se true significa que o cadastro foi efetuado, se false pede para preencher os dados corretamente
-            if (viewModel.addCliente(clientePreenchido)) {
+                //envia o cliente para a viewModel fazer a ação de adicionar ao banco de dados
+                viewModel.addCliente(clientePreenchido)
+
                 Toast.makeText(context, "Cadastro efetuado com sucesso", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_fragmentCadastroClientes_to_fragmentListaClientes)
                 it.hideKeyboard()

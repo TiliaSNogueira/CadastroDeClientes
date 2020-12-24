@@ -11,8 +11,7 @@ interface ClienteDao {
     @Query("SELECT * FROM tabelaClientes ORDER BY nomeCliente ASC")
     suspend fun getAllClientes(): List<Cliente>
 
-    //quando já tiver um cliente com os mesmos dados vai salvar mesmo assim
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     suspend fun addCliente(cliente: Cliente)
 
     @Update
@@ -20,5 +19,10 @@ interface ClienteDao {
 
     @Delete
     suspend fun deleteCliente(cliente: Cliente)
+
+
+
+    @Insert
+    suspend fun prePreenche(listaPrePreenche: List<Cliente>)
 
 }
