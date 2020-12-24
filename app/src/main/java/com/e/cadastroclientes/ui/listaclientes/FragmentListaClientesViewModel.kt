@@ -24,7 +24,7 @@ class FragmentListaClientesViewModel(val repository: Repository) : ViewModel() {
         val listaPrePreenche = listOf(
             Cliente(
                 nome = "Tília S. Nogueira",
-                telefone = "97908445",
+                telefone = "979908445",
                 email = "tilianogueira@gmail.com",
                 endereco = "Rua Apinajés, 385",
                 bairro = "Perdizes",
