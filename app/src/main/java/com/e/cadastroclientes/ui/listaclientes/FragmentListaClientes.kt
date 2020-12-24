@@ -53,6 +53,13 @@ class FragmentListaClientes : Fragment() {
             adapter.setData(it)
         })
 
+        //essa chamada cria alguns clientes para serem pré exibidos para poder testar os comportamentos de update e delete
+        //toda vez que volta para a lista essa função é chamada novamente, então os 3 contatos prepreechidos ficam repetidos... infelizmente não consegui corrigir a tempo
+        viewModel.prePreencheClientesExibicao()
+
+        //viewModel chama a lista e passa pata o adapter
+        viewModel.getAllClientes()
+
 
         //click no botao de cadatrar novo usuario
         view.btn_cadastrar_frag_lista_clientes.setOnClickListener {
@@ -62,18 +69,6 @@ class FragmentListaClientes : Fragment() {
         return view
     }
 
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-        //essa chamada cria alguns clientes para serem pré exibidos para poder testar os comportamentos de update e delete
-        viewModel.prePreencheClientesExibicao()
-
-        //viewModel chama a lista e passa pata o adapter
-        viewModel.getAllClientes()
-
-    }
 
 }
 
