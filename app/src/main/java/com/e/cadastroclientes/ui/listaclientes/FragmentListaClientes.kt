@@ -2,6 +2,7 @@ package com.e.cadastroclientes.ui.listaclientes
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -18,8 +19,6 @@ import kotlinx.android.synthetic.main.fragment_lista_clientes.view.*
 
 class FragmentListaClientes : Fragment() {
 
-    // private var listaClientes: List<Cliente> = listOf()
-
     private lateinit var db: AppDataBase
     private lateinit var repo: Repository
 
@@ -31,6 +30,7 @@ class FragmentListaClientes : Fragment() {
             }
         }
     }
+
 
 
     override fun onCreateView(
@@ -53,6 +53,13 @@ class FragmentListaClientes : Fragment() {
 
         //viewModel chama a lista e passa pata o adapter
         viewModel.getAllClientes()
+
+
+
+        //essa chamada cria alguns clientes para serem pré exibidos para poder testar os comportamentos de update e delete
+        viewModel.prePreencheClientesExibicao()
+
+
         viewModel.listaDeClientes.observe(viewLifecycleOwner, {
             adapter.setData(it)
         })
@@ -66,3 +73,4 @@ class FragmentListaClientes : Fragment() {
     }
 
 }
+

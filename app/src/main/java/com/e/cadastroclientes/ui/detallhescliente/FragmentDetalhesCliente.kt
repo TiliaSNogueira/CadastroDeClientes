@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -18,9 +17,7 @@ import com.e.cadastroclientes.R
 import com.e.cadastroclientes.database.AppDataBase
 import com.e.cadastroclientes.repository.Repository
 import com.e.cadastroclientes.repository.RepositoryImpl
-import kotlinx.android.synthetic.main.fragment_detalhes_cliente.*
 import kotlinx.android.synthetic.main.fragment_detalhes_cliente.view.*
-import kotlinx.android.synthetic.main.item_cliente.view.*
 
 class FragmentDetalhesCliente : Fragment() {
 
@@ -54,19 +51,17 @@ class FragmentDetalhesCliente : Fragment() {
         view.toolbar_frag_detalhes_clientes.inflateMenu(R.menu.menu_opcoes_editar_deletar);
 
 
+        //carrega os dados do objeto cliente que veio no safe args para exibir nos campos
+        view.tv_detalhes_nome.text = args.clienteObj.nome
+        view.tv_detalhes_email.text = args.clienteObj.email
+        view.tv_detalhes_telefone.text = args.clienteObj.telefone
+        view.tv_detalhes_email.text = args.clienteObj.email
+        view.tv_detalhes_endereco.text = args.clienteObj.endereco
+        view.tv_detalhes_bairro.text = args.clienteObj.bairro
+        view.tv_detalhes_cidade.text = args.clienteObj.cidade
+        view.tv_detalhes_estado.text = args.clienteObj.estado
+        view.tv_detalhes_cep.text = args.clienteObj.cep
 
-//        //carrega os dados do objeto cliente que veio no safe args
-       pegaDadosObjParaExibir()
-
-//        view?.tv_detalhes_nome?.setText(args.clienteObj.nome)
-//        view?.tv_detalhes_email?.text = args.clienteObj.email
-//        view?.tv_detalhes_telefone?.text = args.clienteObj.telefone
-//        view?.tv_detalhes_email?.text = args.clienteObj.email
-//        view?.tv_detalhes_endereco?.text = args.clienteObj.endereco
-//        view?.tv_detalhes_bairro?.text = args.clienteObj.bairro
-//        view?.tv_detalhes_cidade?.text = args.clienteObj.cidade
-//        view?.tv_detalhes_estado?.text = args.clienteObj.estado
-//        view?.tv_detalhes_cep?.text = args.clienteObj.cep
 
         //como temos 2 ícones na toolbar, temos que verificar qual deles foi clicado, e então atribuir o comportamento de cada um
         view.toolbar_frag_detalhes_clientes.setOnMenuItemClickListener(
@@ -108,20 +103,5 @@ class FragmentDetalhesCliente : Fragment() {
 
         return view
     }
-
-    //função que pega os dados do objeto que veio no safe args para exibir nos campos
-    private fun pegaDadosObjParaExibir() {
-        //val nomeCliente: TextView = item.tv_item_nome
-        view?.tv_detalhes_nome?.setText(args.clienteObj.nome)
-        view?.tv_detalhes_email?.text = args.clienteObj.email
-        view?.tv_detalhes_telefone?.text = args.clienteObj.telefone
-        view?.tv_detalhes_email?.text = args.clienteObj.email
-        view?.tv_detalhes_endereco?.text = args.clienteObj.endereco
-        view?.tv_detalhes_bairro?.text = args.clienteObj.bairro
-        view?.tv_detalhes_cidade?.text = args.clienteObj.cidade
-        view?.tv_detalhes_estado?.text = args.clienteObj.estado
-        view?.tv_detalhes_cep?.text = args.clienteObj.cep
-    }
-
 
 }

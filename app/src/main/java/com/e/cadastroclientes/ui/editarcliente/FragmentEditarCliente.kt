@@ -50,7 +50,18 @@ class FragmentEditarCliente : Fragment() {
         db = activity?.applicationContext?.let { AppDataBase.invoke(it) }!!
         repo = RepositoryImpl(db.clienteDao())
 
-        preecheCamposComDadosDoCliente()
+        //pega os dados do abjeto cliente do args para exibir nos campos
+
+        view.ed_editar_nome.setText(args.clienteObj.nome)
+        view.ed_editar_email.setText(args.clienteObj.email)
+        view.ed_editar_telefone.setText(args.clienteObj.telefone)
+        view.ed_editar_email.setText(args.clienteObj.email)
+        view.ed_editar_endereco.setText(args.clienteObj.endereco)
+        view.ed_editar_bairro.setText(args.clienteObj.bairro)
+        view.ed_editar_cidade.setText(args.clienteObj.cidade)
+        view.ed_editar_estado.setText(args.clienteObj.estado)
+        view.ed_editar_cep.setText(args.clienteObj.cep)
+
 
         //click setinha de voltar
         view.toolbar_editar.setNavigationOnClickListener {
@@ -70,29 +81,17 @@ class FragmentEditarCliente : Fragment() {
                 findNavController().navigate(R.id.action_fragmentEditarCliente_to_fragmentListaClientes)
                 it.hideKeyboard()
             } else {
-                Toast.makeText(context, "Preencher nome, telefone e email corretamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    context,
+                    "Preencher nome, telefone e email corretamente",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         }
 
         return view
     }
-
-
-    //função que pega os dados do abjeto cliente do args para exibir nos campos
-    private fun preecheCamposComDadosDoCliente(){
-        view?.ed_editar_nome?.setText(args.clienteObj.nome)
-        view?.ed_editar_email?.setText(args.clienteObj.email)
-        view?.ed_editar_telefone?.setText(args.clienteObj.telefone)
-        view?.ed_editar_email?.setText(args.clienteObj.email)
-        view?.ed_editar_endereco?.setText(args.clienteObj.endereco)
-        view?.ed_editar_bairro?.setText(args.clienteObj.bairro)
-        view?.ed_editar_cidade?.setText(args.clienteObj.cidade)
-        view?.ed_editar_estado?.setText(args.clienteObj.estado)
-        view?.ed_editar_cep?.setText(args.clienteObj.cep)
-    }
-
-
 
     //função que atualiza e retorna o cliente de acordo com o que for digitado nos campos
     private fun atualizaClienteSelecionado(): Cliente {

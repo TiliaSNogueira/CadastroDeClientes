@@ -12,7 +12,7 @@ interface ClienteDao {
     suspend fun getAllClientes(): List<Cliente>
 
     //quando já tiver um cliente com os mesmos dados vai salvar mesmo assim
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addCliente(cliente: Cliente)
 
     @Update
@@ -20,6 +20,5 @@ interface ClienteDao {
 
     @Delete
     suspend fun deleteCliente(cliente: Cliente)
-
 
 }

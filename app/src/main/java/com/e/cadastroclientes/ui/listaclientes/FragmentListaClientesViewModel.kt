@@ -19,4 +19,48 @@ class FragmentListaClientesViewModel(val repository: Repository) : ViewModel() {
         }
     }
 
+    fun prePreencheClientesExibicao() {
+
+        val listaPrePreenche = listOf(
+            Cliente(
+                nome = "Tília S. Nogueira",
+                telefone = "97908445",
+                email = "tilianogueira@gmail.com",
+                endereco = "Rua Apinajés, 385",
+                bairro = "Perdizes",
+                cidade = "São Paulo",
+                estado = "SP",
+                cep = "05017000"
+            ),
+            Cliente(
+                nome = "Bill Withers",
+                telefone = "123456",
+                email = "bill@withers.com",
+                endereco = "Rua Street, 01",
+                bairro = "Perdizes",
+                cidade = "São Paulo",
+                estado = "SP",
+                cep = "05017000"
+            ),
+            Cliente(
+                nome = "Stevie Wonder",
+                telefone = "123456",
+                email = "stevie@wonder.com",
+                endereco = "Rua Street, 01",
+                bairro = "Perdizes",
+                cidade = "São Paulo",
+                estado = "SP",
+                cep = "05017000"
+            ),
+        )
+
+        listaPrePreenche.forEach {
+            viewModelScope.launch {
+                repository.addClienteTask(it)
+            }
+        }
+
+
+    }
+
 }

@@ -19,4 +19,5 @@
     <string name="cadastrar_novo_cliente">CADASTRAR NOVO CLIENTE</string>
     <string name="editar">Editar</string>
     <string name="atualizar">ATUALIZAR</string>
+    <string name="procurar">Procurar</string>
 </resources>

@@ -32,6 +32,9 @@
             app:destination="@id/fragmentCadastroClientes"
             app:enterAnim="@anim/from_bottom"
             app:exitAnim="@anim/to_top" />
+        <action
+            android:id="@+id/action_fragmentListaClientes_to_fragmentSearchCliente"
+            app:destination="@id/fragmentSearchCliente" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDetalhesCliente"
@@ -77,5 +80,10 @@
             app:enterAnim="@anim/from_left"
             app:exitAnim="@anim/to_right" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentSearchCliente"
+        android:name="com.e.cadastroclientes.ui.searchcliente.FragmentSearchCliente"
+        android:label="fragment_search_cliente"
+        tools:layout="@layout/fragment_search_cliente" />
 
 </navigation>

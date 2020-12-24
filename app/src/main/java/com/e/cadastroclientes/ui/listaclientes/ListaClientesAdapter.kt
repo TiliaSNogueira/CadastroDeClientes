@@ -3,6 +3,8 @@ package com.e.cadastroclientes.ui.listaclientes
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +12,7 @@ import com.e.cadastroclientes.R
 import com.e.cadastroclientes.models.Cliente
 import kotlinx.android.synthetic.main.item_cliente.view.*
 
-class ListaClientesAdapter() : RecyclerView.Adapter<ListaClientesAdapter.ClienteViewHolder>() {
+class ListaClientesAdapter() : RecyclerView.Adapter<ListaClientesAdapter.ClienteViewHolder>(){
 
     var listaClientes = emptyList<Cliente>()
 
@@ -42,10 +44,11 @@ class ListaClientesAdapter() : RecyclerView.Adapter<ListaClientesAdapter.Cliente
     //pega a quantidade de itens da lista
     override fun getItemCount() = listaClientes.size
 
-    //avisa o adapter quando tem mudanças
+    //passa as listas e avisa o adapter quando tem mudanças
     fun setData(cliente: List<Cliente>) {
         this.listaClientes = cliente
         notifyDataSetChanged()
+
     }
 
     //classe que pega os dados e mostra no layout
@@ -55,5 +58,6 @@ class ListaClientesAdapter() : RecyclerView.Adapter<ListaClientesAdapter.Cliente
         val emailCliente: TextView = item.tv_item_email
 
     }
+
 
 }
